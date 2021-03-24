@@ -61,8 +61,6 @@ if (localStorage.getItem("toList")==null){
     }
 }
 
-console.log(toList)
-console.log(mList)
 
 
 n = parseInt(localStorage.getItem("counter"));
@@ -96,7 +94,7 @@ function addToDo(){
         li.className = "menuList" + n;
         toList.push(li.className)
         localStorage.setItem("toList" ,toList);
-        console.log(toList)
+       
         menuList = li.innerHTML;
         
         localStorage.setItem("menuList"+ n, menuList);
@@ -142,7 +140,7 @@ function delToDo(delBtn){
             localStorage.removeItem(delBtn.parentNode.className);
             idx = toList.indexOf(delBtn.parentNode.className);
             toList.splice(idx, 1);
-            console.log(delBtn.parentNode.className)
+           
             localStorage.setItem("toList", toList);
             
         } else {
@@ -152,7 +150,6 @@ function delToDo(delBtn){
             localStorage.removeItem(delBtn.parentNode.className);
             idx = mList.indexOf(delBtn.parentNode.className);
             mList.splice(idx, 1);
-            console.log(delBtn.parentNode.className)
             localStorage.setItem("mList", mList);
         }
         
@@ -169,14 +166,17 @@ function pressKey(event){
 
 function addMenu(){
     menuArr = document.querySelectorAll(".menu_list > li ");
+  
     menu = [];
     
 
     for(i=0; i<menuArr.length;i++){
-        menu.push(menuArr[i].innerHTML);
+        menu.push(menuArr[i].innerHTML.split('<')[0]);
+      
     }
     newMenu = document.querySelector('.input_menu').value;
-    
+
+
     if (!menu.includes(newMenu) && newMenu != ''){
         li = document.createElement('li');
       
@@ -188,7 +188,7 @@ function addMenu(){
         li.className = "rest" + n2;
         mList.push(li.className)
         localStorage.setItem("mList" ,mList);
-        console.log(mList)
+ 
         li.innerHTML = newMenu;
        
         
