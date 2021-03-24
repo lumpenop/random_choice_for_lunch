@@ -134,7 +134,6 @@ function delToDo(delBtn){
         
         if (delBtn.parentNode.className.slice(0, 8)=='menuList'){
             n = parseInt(localStorage.getItem("counter"));
-            n--;
             localStorage.removeItem('counter');
             localStorage.setItem("counter", n);
             localStorage.removeItem(delBtn.parentNode.className);
@@ -147,7 +146,6 @@ function delToDo(delBtn){
             
         } else {
             n2 = parseInt(localStorage.getItem("restCounter"));
-            n2--;
             localStorage.removeItem('restCounter');
             localStorage.setItem("restCounter", n2);
             localStorage.removeItem(delBtn.parentNode.className);
