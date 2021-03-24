@@ -138,10 +138,9 @@ function delToDo(delBtn){
             localStorage.setItem("counter", n);
             localStorage.removeItem(delBtn.parentNode.className);
             idx = toList.indexOf(delBtn.parentNode.className);
-            console.log("className =", delBtn.parentNode.className);
-            console.log("toList1 = " , toList);
+ 
             toList.splice(idx, 1);
-            console.log("toList2 = " , toList);
+          
             localStorage.removeItem("toList");
             localStorage.setItem("toList", toList);
             
@@ -152,6 +151,7 @@ function delToDo(delBtn){
             localStorage.setItem("restCounter", n2);
             localStorage.removeItem(delBtn.parentNode.className);
             idx = mList.indexOf(delBtn.parentNode.className);
+           
             mList.splice(idx, 1);
             localStorage.removeItem("mList");
             localStorage.setItem("mList", mList);
