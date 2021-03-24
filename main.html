@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>today's Menu</title>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="header">
+                <ul class="menu_list">
+              
+                </ul>
+                <div style="clear: both;"></div>
+                
+                <div class="add_menu">
+                    <input type="text" class="input_menu" placeholder="추가할 메뉴 입력" onkeypress="pressKey(event);">
+                    <input type="button" class="menu_btn" value="+" onclick="addMenu();">
+                </div>
+                <div class="container">
+                    
+                    <div class="add_todo todo">
+                        <h1 class="title">오늘의 메뉴
+                            <input class="input_btn" type="button" onclick="addToDo();" value="?">
+                        </h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="content container">
+                <ul class="todo_list todo">
+            
+                </ul>
+            </div>
+        </div>
+        
+        
+
+        <script src="./main.js"></script>
+    </body>
+</html>
