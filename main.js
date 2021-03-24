@@ -10,11 +10,8 @@ if (localStorage.getItem("counter")==null){
 }
 
 
-// mList, toList를 localStorage에서 가져와서
-// 문자열을 배열로 변경해야함 for 문 사용?
 
-
-if (localStorage.getItem("mList")==null){
+if (localStorage.getItem("mList")==null || localStorage.getItem("mList")==''){
     mList = []
     localStorage.setItem("mList",mList)
 } else {
@@ -42,9 +39,10 @@ if (localStorage.getItem("mList")==null){
     
 }
 
-if (localStorage.getItem("toList")==null){
+if (localStorage.getItem("toList")==null || localStorage.getItem("toList")==''){
     toList = []
     localStorage.setItem("toList",toList)
+    
 } else {
     toList = localStorage.getItem("toList");
     toList = toList.split(',')
@@ -133,23 +131,26 @@ function delToDo(delBtn){
         localStorage.removeItem(delBtn.parentNode.className);
         delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
         
-        if (delBtn.parentNode.className.slice(0, -1)=='menuList'){
+        if (delBtn.parentNode.className.slice(0, 8)=='menuList'){
             n = parseInt(localStorage.getItem("counter"));
             n--;
+            localStorage.removeItem('counter');
             localStorage.setItem("counter", n);
             localStorage.removeItem(delBtn.parentNode.className);
             idx = toList.indexOf(delBtn.parentNode.className);
             toList.splice(idx, 1);
-           
+            localStorage.removeItem("toList");
             localStorage.setItem("toList", toList);
             
         } else {
-            n = parseInt(localStorage.getItem("restCounter"));
-            n--;
+            n2 = parseInt(localStorage.getItem("restCounter"));
+            n2--;
+            localStorage.removeItem('restCounter');
             localStorage.setItem("restCounter", n2);
             localStorage.removeItem(delBtn.parentNode.className);
             idx = mList.indexOf(delBtn.parentNode.className);
             mList.splice(idx, 1);
+            localStorage.removeItem("mList");
             localStorage.setItem("mList", mList);
         }
         
