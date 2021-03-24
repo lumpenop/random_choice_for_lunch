@@ -133,9 +133,7 @@ function delToDo(delBtn){
         delBtn.parentNode.parentNode.removeChild(delBtn.parentNode);
         
         if (delBtn.parentNode.className.slice(0, 8)=='menuList'){
-            n = parseInt(localStorage.getItem("counter"));
-            localStorage.removeItem('counter');
-            localStorage.setItem("counter", n);
+        
             localStorage.removeItem(delBtn.parentNode.className);
             idx = toList.indexOf(delBtn.parentNode.className);
  
@@ -145,9 +143,7 @@ function delToDo(delBtn){
             localStorage.setItem("toList", toList);
             
         } else {
-            n2 = parseInt(localStorage.getItem("restCounter"));
-            localStorage.removeItem('restCounter');
-            localStorage.setItem("restCounter", n2);
+            
             localStorage.removeItem(delBtn.parentNode.className);
             idx = mList.indexOf(delBtn.parentNode.className);
            
@@ -212,5 +208,34 @@ function addMenu(){
     } else if (menu.includes(newMenu)){
         alert('이미 존재하는 식당이에요')
     }
+
+}
+
+function allClear(){
+    if (confirm('모든 기록을 삭제하시겠습니까?')){
+
+        if (localStorage.getItem("counter")!=0){
+            localStorage.clear();
+            window.location.reload();
+        }
+    }
+}
+
+function allChildren(){
+     menuList = document.querySelector(".todo_list"); 
+
+     if (confirm('이전 기록을 모두 삭제하시겠습니까?')){
+        if ( localStorage.getItem("toList")!=null){
+            while (menuList.hasChildNodes()) {
+                
+
+                localStorage.removeItem("toList");
+                menuList.removeChild(menuList.firstChild); 
+            }
+        }
+    }
+    
+    
+
 
 }

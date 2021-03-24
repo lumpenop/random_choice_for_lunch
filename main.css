@@ -13,7 +13,7 @@ a{
 }
 
 .container{
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
   
@@ -54,12 +54,15 @@ a{
 }
 
 .content{
-    margin: 30px auto 0 auto;
+    margin-top: 30px;
     padding-bottom: 20px;
 }
 
 .todo_list{
+    width: 1200px;
     padding: 0 10px;
+    margin: 0 auto;
+    text-align: left;
 }
 
 .todo_list > li {
@@ -93,14 +96,10 @@ a{
     top: 1px;
 }
 
-.todo_list{
-    width: 100%;
-    text-align: left;
-    
-}
+
 
 .menu_list{
-    width: 1200px;
+    width: 600px;
     display: block;
 }
 
@@ -126,6 +125,7 @@ a{
 
 .menu_btn{
     width: 25px;
+    color: gray;
 }
 
 .input_menu{
@@ -149,8 +149,31 @@ a{
     height: 16px;
 }
 
+.clear_btn{
+    float: right;
+}
 
+.clear_btn{
+    padding: 0 10px;
+    height: 30px;
+    margin-right: 20px;
+    border: none;
+    color: gray;
+    display: block;
+    border-radius: 2px;
+}
 
+.del_menu{
+    color: gray;
+}
 
-
-
+.delRecord_btn{
+    float: right;
+    height: 30px;
+    margin-right: 20px;
+    border: none;
+    color: gray;
+    display: block;
+    border-radius: 2px;
+    padding: 0 10px;
+}

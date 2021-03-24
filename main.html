@@ -16,6 +16,7 @@
                 <div class="add_menu">
                     <input type="text" class="input_menu" placeholder="추가할 메뉴 입력" onkeypress="pressKey(event);">
                     <input type="button" class="menu_btn" value="+" onclick="addMenu();">
+                    <button class="clear_btn" onclick="allClear();">reset</button> 
                 </div>
                 <div class="container">
                     
@@ -26,8 +27,12 @@
                         
                     </div>
                 </div>
+            
+            
+        
             </div>
             <div class="content container">
+                <input type="button" class="delRecord_btn" onclick="allChildren()" value="기록 삭제">
                 <ul class="todo_list todo">
             
                 </ul>
