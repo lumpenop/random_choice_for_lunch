@@ -85,7 +85,8 @@ function addToDo(){
 
         today = new Date();
         month = today.getMonth()+1;
-        day = today.getDay();
+        day = today.getDate();
+    
         n++;
         li = document.createElement('li');
         li.innerHTML = month+"/"+day+"&nbsp&nbsp"+todayMenu;
